@@ -1,0 +1,49 @@
+<template name="userRoles">
+    {{#if isAdmin}}
+        <div class="userRoles">
+            <div class="userRolesTable">
+                <table class="bordered highlight">
+                    <thead>
+                    <tr>
+                        <th>
+                            <div class="input-field col s12 selectChannelDiv">
+                                <select class="selectChannel">
+                                    <option value="" disabled selected>Choose a channel</option>
+                                    {{#each channels}}
+                                        <option value={{name}}>{{name}}</option>
+                                    {{/each}}
+                                    <label>Materialize Select</label>
+                                </select>
+                            </div>
+
+                        </th>
+                        {{#each roles}}
+                            <th>{{_id}}</th>
+                        {{/each}}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each users}}
+                        <tr class = "rows" id={{_id}}>
+                            <td><span class="username-text">{{username}}</span>
+
+                                    <!--<input type="radio" id="{{_id}}" name="globalRole" {{isTeamAdmin _id}}><label id="{{_id}}">{{_id}}</label>-->
+                                    <input type="checkbox"  checked={{isTeamAdmin _id}}><label id="admin" name="adminRole" checked= {{isTeamAdmin ../_id}}>Admin</label>
+
+                            </td>
+                            {{#each roles}}
+                                {{#with userId = ../_id roleId = _id}}
+                                    <td><input id="{{_id}}"  checked={{permissionActive ../_id}} type="checkbox"><label id="{{this.roleId}}" checked = {{permissionActive ../_id}} name="channelRoles"></label></td>
+                                {{/with}}
+                            {{/each}}
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+                <div class="backLink">Back</div>
+            </div>
+        </div>
+    {{else}}
+        {{> notAuthorized}}
+    {{/if}}
+</template>

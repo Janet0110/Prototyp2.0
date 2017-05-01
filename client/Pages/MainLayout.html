@@ -1,0 +1,15 @@
+<template name="mainLayout">
+    {{#if authInProcess}}
+        {{#if canShow}}
+            {{> header }}
+            {{#if channelSidebarActiv}}
+                {{> channelSidebar}}
+            {{/if }}
+            {{> listings}}
+                {{>Template.dynamic template=content}}
+            {{/if}}
+            {{> footer }}
+        {{/if}}
+
+</template>
+

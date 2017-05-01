@@ -1,0 +1,32 @@
+<template name="teamSidebar">
+    <div class="teamSidebar">
+        <div class="teamSidebar_header">
+                             <span class="teamSidebar_header_text">
+                                 Users in team:
+                             </span>
+
+            <div class="team_tools"></div>
+            {{#if newUser}}
+                {{> newUserDialog newUser = newUser}}
+            {{/if}}
+            <!--<DialogModal-->
+                    <!--buttonType={<div className="add_user"></div>}-->
+        <!--header="Invite a new user to your team"-->
+        <!--content={this.renderForm()}-->
+        <!--buttonName = {buttonName}-->
+        <!--/>-->
+        <ul>
+            {{#each users}}
+                <li class="user_element">
+                    <a class="user_name">
+                        <span>{{name}}</span>
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+
+        <a class="permission" href='#'>Permissions</a><br>
+        <a class="userRoles" href='#'>User roles</a>
+    </div>
+</template>

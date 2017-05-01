@@ -1,0 +1,12 @@
+<template name="channel">
+        <li class="channel {{active}}">
+            <a class="channel_name" href={{canAccessChannel}}>
+                <div class="channel-state">
+                        <span class="private-channel " ></span>
+                </div>
+                <span class="prefix">#</span>
+                <span class="channel-name">{{name}}</span>
+                <div class="{{private}}"></div>
+            </a>
+    </li>
+</template>

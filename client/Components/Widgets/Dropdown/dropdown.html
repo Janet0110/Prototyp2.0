@@ -1,0 +1,14 @@
+<template name="dropdown">
+    <div id="dialog-buttons" class="dialog-buttons-dropdown-align dropdown-container" >
+        <a class="popup-link-button" >
+            {{name}} ▾
+        </a>
+        {{#if state}}
+            <div class="popup-dialog block" >
+                {{#each list}}
+                    {{> item name = menuName id = id state = state}}
+                {{/each}}
+            </div>
+        {{/if}}
+    </div>
+</template>

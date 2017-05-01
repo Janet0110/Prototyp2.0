@@ -1,0 +1,55 @@
+<template name="permissions">
+    {{#if isAdmin}}
+        <div class='permissions'>
+            <div class="permissionsTableGlobal">
+                <table class="bordered highlight">
+                    <thead>
+                    <tr>
+                        <th>Global-Permissions</th>
+                        {{#each rolesGL}}
+                            <th>{{_id}}</th>
+                        {{/each}}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each permissionsGL}}
+                        <tr class = "rows" id={{_id}}>
+                            <td>{{_id}}</td>
+                            {{#each rolesGL}}
+                                <td><input id={{../_id}} type="checkbox" checked={{permissionActive ../_id}} name={{_id}}><label id={{_id}} checked= {{permissionActive ../_id}}></label></td>
+                            {{/each}}
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+                <br>
+            </div>
+
+            <div class="permissionsTable">
+                <table class="bordered highlight">
+                    <thead>
+                    <tr>
+                        <th>Channel-Permissions</th>
+                        {{#each roles}}
+                            <th>{{_id}}</th>
+                        {{/each}}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each permissions}}
+                        <tr class = "rows" id={{_id}}>
+                            <td>{{_id}}</td>
+                                {{#each roles}}
+                                <td><input id={{../_id}} type="checkbox" checked={{permissionActive ../_id}} name={{_id}}><label id={{_id}} checked= {{permissionActive ../_id}}></label></td>
+                                {{/each}}
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+                <div class="backLink">Back</div>
+            </div>
+        </div>
+    {{else}}
+        {{> notAuthorized}}
+    {{/if}}
+</template>

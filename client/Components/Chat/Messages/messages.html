@@ -1,0 +1,13 @@
+<template name="messages">
+    <div class="messages_container">
+        <ul>
+            {{#if Template.subscriptionsReady}}
+                {{#each messages}}
+                    {{> message text = text timestamp=date user=user messageId = _id}}
+                {{/each}}
+            {{else}}
+                Loading...
+            {{/if}}
+        </ul>
+    </div>
+</template>

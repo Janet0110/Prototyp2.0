@@ -1,0 +1,24 @@
+<template name="listings">
+    {{#if sidebar}}
+        {{> teamSidebar}}
+    {{/if}}
+    <div class="listings_Container">
+            <div class="listings_channels">
+                <div class="listings_header">
+                             <span class="listings_header_text">
+                                 Channels
+                             </span>
+                    <div class="listings_tools"></div>
+                    {{#if state}}
+                        {{> createChannelDialog state = state}}
+                    {{/if}}
+            </div>
+                <ul class="channel_list">
+                    {{#each channels}}
+                        {{> channel name = name private = private}}
+                    {{/each}}
+                </ul>
+            </div>
+
+        </div>
+</template>

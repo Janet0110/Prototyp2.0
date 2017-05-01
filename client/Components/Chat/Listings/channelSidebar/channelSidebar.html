@@ -1,0 +1,16 @@
+<template name="channelSidebar">
+        <div class="channelSidebar">
+            <div class="channelText">Channel</div>
+           <h5 class="channelName"> {{channelName}}</h5>
+            <div class="channelBox">
+                <span class="channel-users-text">Users in Channel: </span>
+                <div class="usersList">
+                <ul>
+                    {{#each userInChannel}}
+                            <li>{{username}}</li>
+                    {{/each}}
+                </ul>
+                </div>
+            </div>
+        </div>
+</template>

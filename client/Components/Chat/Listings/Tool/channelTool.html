@@ -1,0 +1,16 @@
+<template name="channelTool">
+    <span class="toolbox">
+         <ul id="nav-mobile" class="right hide-on-med-and-down ulList" >
+             {{> dropdown name = "Settings" list = channelList }}
+         </ul>
+
+        {{#if dialogState}}
+            {{> removeDialog dialogState = dialogState}}
+        {{/if}}
+
+        {{#if dialogAddUserState}}
+            {{> addUserDialog dialogState = dialogAddUserState}}
+        {{/if}}
+
+    </span>
+</template>

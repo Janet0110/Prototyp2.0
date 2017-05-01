@@ -1,0 +1,29 @@
+<template name="header">
+    <nav class="header" >
+        <div class="nav-wrapper" >
+            <div class="team-menu teamMenu" >
+                {{team}}
+                {{#if admin}}
+                    <div class="toolbox">
+                        {{> teamTool}}
+                    </div>
+                {{/if}}
+            </div>
+            <div class="channel-menu channelMenu" >
+                    <span class="channelInfo">
+                        <span class="channel-menu-name channelMenuName" >
+                            <span class="channel-menu-prefix channelPrefix" ># </span>
+                            {{channel}}
+                        </span>
+                            {{#if admin}}
+                                {{> channelTool}}
+                                {{> channelInfo}}
+                            {{/if}}
+                    </span>
+                <ul id="nav-mobile" class="right hide-on-med-and-down ulList" >
+                    {{> dropdown name = name list = accountList }}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</template>

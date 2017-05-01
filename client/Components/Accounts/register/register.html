@@ -1,0 +1,44 @@
+<template name="register">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3" >
+                <div class="panel panel-login" >
+                    <div class="form-header">
+                        <div class="col-xs-6">
+                            Register
+                        </div>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 col">
+                                <form class="register-form">
+                                    <div class="form-group">
+                                        <input id="registerUsername" type="text" name="username" class="username" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="registerEmail" type="text" class="email" name ="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="registerPassword" type="password" class="password" name = "password" placeholder="Password">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <button name="register-submit" id="register-submit"
+                                                         class="form-control btn btn-register" value="Register">Register</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="link-register-login" id="loginLink" href="/login">Login</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

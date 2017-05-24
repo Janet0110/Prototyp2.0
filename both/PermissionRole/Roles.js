@@ -1,5 +1,4 @@
 Rol = Object.freeze({
-
     //---------------TEAM ROLES---------------
     USER: 			"user",
     ADMIN:	        "admin",

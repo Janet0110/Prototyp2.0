@@ -13,7 +13,8 @@ Template.channelTool.helpers({
     channelList: function(){
         return [
             {menuName: "Remove Channel", id: "rmvChannelBtn"},
-            {menuName: "Add user", id: "addUserBtn"}
+            {menuName: "Add user", id: "addUserBtn"},
+            {menuName: 'Toast', id: "toast"}
         ]
     }
 });
@@ -36,5 +37,8 @@ Template.channelTool.events({
                 Materialize.toast('Not allowed', 4000, "error");
             }
         });
+    },
+    'click #toast': function(evt, tmpl){
+          Materialize.toast('Test done', 4000, "success");
     }
 });

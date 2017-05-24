@@ -3,7 +3,7 @@
         <a href="" class="message_profile-pic"></a>
         <a href="" class="message_username">{{usernameFromId user}}</a>
         <span class="message_timestamp">{{timestampToTime timestamp}}</span>
-        <span class="message_star"></span>
+        {{>deleteMessageTool messageId=messageId}}
         <span class="message_content">{{text}}</span>
     </div>
 </template>

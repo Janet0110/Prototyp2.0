@@ -1,4 +1,5 @@
 Meteor.methods({
+    /*Löscht eine Channel-Rolle */
     'removeUserFromChannelRole': function(roleName, teamId,  userId, username, channelName){
         var channel = Channels.findOne({"name": channelName});
         if(Meteor.userId()){

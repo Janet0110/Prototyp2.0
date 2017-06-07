@@ -1,3 +1,4 @@
+/*Überprüft, ob Rolle die Berechtigung hat*/
 Meteor.methods({
     'hasRolePermission': function(roleName, permission) {
         if (Meteor.userId()) {

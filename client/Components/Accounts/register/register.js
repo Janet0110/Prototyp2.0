@@ -1,4 +1,5 @@
 Template.register.events({
+    /*Form Submit für das Registrieren eines Benutzers mit anschließedem Login*/
     'submit .register-form': function(e, template) {
         event.preventDefault();
         var username = $(e.target).find('[name="username"]').val();
@@ -10,9 +11,10 @@ Template.register.events({
             password: password,
             username: username
         };
-
+        /*Erstellt durch Package Accounts einen neuen Benutzer*/
         Accounts.createUser(accountInfo, function (err) {
             if (!err) {
+                /*Loggt Benutzer mit Benutzernamen ein*/
                 Meteor.loginWithPassword(username, password, function(err){
                     if(!err){
                         FlowRouter.go("/teams");

@@ -1,7 +1,10 @@
+/*Handling der Events, die an ein Element gebunden werden*/
 Template.newUserDialog.events({
+    /*Schließt das Dialogfenster*/
     'click .close': function(e, tmpl){
         dialogHide();
     },
+    /*Form-Submit für das Einladen eines Benutzers durch die E-Mail-Adress*/
     'click .submit': function(e, tmpl){
         var team = currentTeam();
         var to = $('.inputValue').val();
@@ -20,7 +23,7 @@ Template.newUserDialog.events({
         dialogHide();
     }
 });
-
+/*Funktion für das Schließen des Dialogfensters*/
 var dialogHide = function(){
     var parentView = Blaze.currentView.parentView.parentView;
     var parentInstance  = parentView.parentView.templateInstance();

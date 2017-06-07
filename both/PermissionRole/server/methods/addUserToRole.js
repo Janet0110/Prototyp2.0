@@ -1,5 +1,6 @@
 Meteor.methods({
-   'addUserToRole': function(roleName, teamId, userId) {
+    /*Weist dem Benutzer eine Rolle zu*/
+    'addUserToRole': function(roleName, teamId, userId) {
        if (Meteor.userId()) {
            //globale Rollen ändern
            if (isAdmin(teamId, Meteor.userId())) {

@@ -1,3 +1,4 @@
+/*Überpüfung für Permissions, ob Benutzer Teamersteller ist*/
 isTeamOwner = function(teamId, userId) {
     var owner = Teams.findOne({_id: teamId}, {fields: {
         _id: 0,

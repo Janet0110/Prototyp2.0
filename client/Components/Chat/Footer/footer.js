@@ -1,6 +1,6 @@
 Template.footer.events({
+    /*speichert Text in Variable und überprüft ob die Eingabetaste für das Absender der Nachricht gedrückt wurde, um die Nachricht abzusenden*/
     'keypress input': function(event){
-
         var inputVal = $('.inputText').val();
         if(!!inputVal){
             var charCode = (typeof event.which == "number") ? event.which : event.keyCode;
@@ -12,6 +12,7 @@ Template.footer.events({
             }
         }
     },
+    /*sendet den eingegebenen Text in aktuellen Team und Channel*/
     'click .sendButton': function(event){
         event.stopPropagation();
         var inputVal = $('.inputText').val();
@@ -21,6 +22,7 @@ Template.footer.events({
 
 });
 
+/*Funktion für das Senden der Nachricht*/
 var sendMessage = function(cannel, text, user, team, date){
     Messages.insert({
         // TODO: Meteor.call Aufruf

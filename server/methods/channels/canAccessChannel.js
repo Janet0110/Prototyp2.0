@@ -1,4 +1,5 @@
 Meteor.methods({
+    /*Überprüft, ob User den Channel betreten kann*/
     canJoinChannel: function(teamName, channelName, userId) {
 
         var user = Meteor.users.findOne(userId);

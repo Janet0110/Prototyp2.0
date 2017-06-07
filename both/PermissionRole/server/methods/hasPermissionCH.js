@@ -1,4 +1,5 @@
 Meteor.methods({
+    /*Überprüft, ob der Benutzer im Team die Berechtigung hat*/
     'hasChannelPermission': function(permission, teamId,  userId , channelId){
         if(Meteor.userId()){
             if(!userId){

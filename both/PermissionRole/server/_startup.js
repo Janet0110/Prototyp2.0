@@ -1,3 +1,4 @@
+/*definiert Berechtigungen und fügt Rollen der Berechtigung hinzu*/
 if(Meteor.isServer){
     Meteor.startup(function(){
             console.log("PermissionRole init");
@@ -17,7 +18,7 @@ if(Meteor.isServer){
                 { _id: 'member',    description: 'Member'},
                 { _id: 'user',      description: 'User' }
             ];
-
+        /*speichert Rollen in die Datenbank*/
         for(var i = 0; i < defaultRoles.length; i++){
             if(!Roles.findOne({_id: defaultRoles[i]._id})){
                 Roles.insert({
@@ -27,6 +28,7 @@ if(Meteor.isServer){
             }
         }
 
+        /*speichert Berechtigungen in die Datenbank*/
         for(var i = 0; i < permissions.length; i++){
             if(!Permissions.findOne({_id: permissions[i]._id})){
                 Permissions.insert({

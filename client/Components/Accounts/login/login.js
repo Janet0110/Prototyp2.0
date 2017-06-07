@@ -1,4 +1,5 @@
 Template.login.events({
+    /*Form-Submit für das Einloggen eines Benutzers*/
     'submit .login-form': function (e, template) {
         e.preventDefault();
         var username = $(e.target).find('[name="username"]').val();

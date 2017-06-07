@@ -1,4 +1,5 @@
 Meteor.methods({
+    /*Aktualisiert Berechtigung*/
     'updatePermission': function(permission, role, change){
 
         if(change === "pull"){

@@ -1,4 +1,5 @@
 Meteor.methods({
+    /*Fügt einen Benutzer zum Channel*/
     addUserToChannel: function(userName, channelId, teamId) {
         var user = Meteor.users.findOne({name: username});
         if(!user){

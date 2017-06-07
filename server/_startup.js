@@ -1,5 +1,6 @@
 console.log("Starting server...");
 
+/*
 if (Meteor.users.find().count() === 0) {
     Accounts.createUser({
         email: 'JanetRahn@msn.com',
@@ -56,4 +57,4 @@ if(Messages.find().count() === 0){
             channel: channelId
         })
     })
-}
+}*/

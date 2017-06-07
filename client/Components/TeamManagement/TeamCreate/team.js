@@ -1,4 +1,6 @@
+/*Handling der Events, die an ein Element gebunden werden*/
 Template.teamCreate.events({
+    /*Form-Submit, um ein neues Team zu erstllen*/
     'submit .teamCreate': function (e, template) {
         e.preventDefault();
         var teamname = $(e.target).find('[name="teamName"]').val();
